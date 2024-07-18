@@ -12,7 +12,7 @@ function Ticket({ ticket }) {
       <MdMail className="text-xl col-span-1" />
       <Tooltip title={ticket.status} className="col-span-1">
         <div className="w-14">
-          <p className="bg-red-100 cursor-pointer text-red-400 px-1 rounded-md">
+          <p className="bg-red-100 cursor-pointer text-red-400 px-1 rounded-md justify-center text-center">
             {ticket.status}
           </p>
         </div>
@@ -22,13 +22,14 @@ function Ticket({ ticket }) {
       </div>
       <Tooltip title="Resolved" className="col-span-1">
         <div className="w-10">
-          <p className="bg-blue-100 cursor-pointer text-blue-400 px-1 rounded-md">
+          <p className="bg-blue-100 cursor-pointer text-blue-400 px-1 rounded-md justify-center text-center">
             {ticket.flag}
           </p>
         </div>
       </Tooltip>
       <BsFlagFill className="text-red-500 col-span-1" />
       <BiArchive className="text-lg col-span-1" />
+      
     </div>
   );
 }

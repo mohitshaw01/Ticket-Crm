@@ -1,16 +1,15 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchTickets } from "../store/slices/TicketSlice.js";
+import { fetchTickets } from "../store/slices/TodoTickets.js";
 import Ticket from "./Ticket.jsx";
 
 function FetchTicketRedux() {
   const dispatch = useDispatch();
-  const tickets = useSelector((state) => state.ticket.tickets);
+  const tickets = useSelector((state) => state.todo.tickets);
 
   useEffect(() => {
-    dispatch(fetchTickets());
+    if (tickets.length === 0) dispatch(fetchTickets());
   }, []);
-
 
   return (
     <div className=" h-[90vh] w-full overflow-scroll overflow-x-hidden ">

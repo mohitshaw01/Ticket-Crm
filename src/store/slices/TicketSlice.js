@@ -8,7 +8,6 @@ const initialState = {
   error: null,
 };
 
-
 export const fetchTickets = createAsyncThunk(
   'fetchTickets',
   async (_, { rejectWithValue }) => {
@@ -121,17 +120,15 @@ export const fetchTickets = createAsyncThunk(
           date: "Jul 03",
         },
       ]
-      console.log(response);
       return response;
-      // return response.data;
     } catch (error) {
-      return rejectWithValue(error.response.data || error.message);
+      return rejectWithValue(error.response?.data || error.message);
     }
   }
 );
 
 // Define the TicketSlice
-const TicketSlice = createSlice({
+const ticketSlice = createSlice({
   name: 'ticket',
   initialState,
   reducers: {},
@@ -146,9 +143,9 @@ const TicketSlice = createSlice({
       })
       .addCase(fetchTickets.rejected, (state, action) => {
         state.status = 'failed';
-        state.error = action.error.message;
+        state.error = action.payload || action.error.message;
       });
   },
-});
+});  
 
-export default TicketSlice.reducer;
+export default ticketSlice.reducer;

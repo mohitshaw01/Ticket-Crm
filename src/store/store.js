@@ -4,7 +4,7 @@ import TodoSlice from "./slices/TodoTickets.js";
 
 const store = configureStore({
     reducer : {
-        ticket : TicketSlice, 
+        // ticket : TicketSlice, 
         todo : TodoSlice,
     },
 })

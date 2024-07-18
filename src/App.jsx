@@ -15,6 +15,7 @@ function App() {
         <Route path="/tickets" element={<ViewTicket />} />
         <Route path="/addTicket" element={<AddTicket/>} />
         <Route path="/" element={<Home />} />
+        {/* <Route path='/ticket/:id' element={<TicketDetail />} /> */}
       </Routes>
     </>
   );
