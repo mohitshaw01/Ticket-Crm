@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import NoteAddOutlinedIcon from "@mui/icons-material/NoteAddOutlined";
 import FolderCopyOutlinedIcon from "@mui/icons-material/FolderCopyOutlined";
 import { useNavigate } from "react-router-dom";
+import { setView } from "../store/slices/setView";
+import { useDispatch } from "react-redux";
 
 function Ticket_sidebar() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const views = [
     "Unassigned",
     "All pending",
@@ -14,7 +17,13 @@ function Ticket_sidebar() {
     "Created by me",
     "Completed by me",
   ];
-  const [selectedView, setSelectedView] = useState(views[0]);
+
+  const [selectedView, setSelectedView] = useState("All");
+
+  const handleClick = (view) => {
+    dispatch(setView(view));
+    setSelectedView(view);
+  };
 
   return (
     <div className="bg-gray-100  inline-flex h-[90vh] items-start  w-[12rem]">
@@ -39,7 +48,7 @@ function Ticket_sidebar() {
                   ? "bg-blue-500 text-white"
                   : "bg-transparent text-black"
               } hover:scale-105 hover:bg-blue-500 hover:text-white`}
-              onClick={() => setSelectedView(view)}
+              onClick={() => handleClick(view)}
             >
               {view}
             </div>

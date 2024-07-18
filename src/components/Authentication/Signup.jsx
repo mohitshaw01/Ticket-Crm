@@ -1,8 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { signUpValidation } from "../../schema/SignupValidation.jsx";
 
+
 function Signup() {
+  const navigate = useNavigate();
   const initialValues = {
     name: "",
     email: "",
@@ -14,6 +17,7 @@ function Signup() {
     const valueStr = JSON.stringify(values, null, 2);
     // setting the item in the local storage.
     localStorage.setItem("user", valueStr);
+    navigate("/login");
     console.log(values);
     actions.resetForm();
   };

@@ -5,6 +5,7 @@ import TicketDashboard from "../src/components/pages/TicketDashboard.jsx";
 import ViewTicket from './components/ViewTicket.jsx';
 import Home from "./components/pages/Home.jsx";
 import AddTicket from "./components/AddTicket.jsx";
+import TicketDetail from "./components/pages/TicketDetails.jsx";  
 function App() {
   return (
     <>
@@ -15,6 +16,7 @@ function App() {
         <Route path="/tickets" element={<ViewTicket />} />
         <Route path="/addTicket" element={<AddTicket/>} />
         <Route path="/" element={<Home />} />
+        <Route path='/ticket/:id' element={<TicketDetail />} /> 
       </Routes>
     </>
   );

@@ -13,12 +13,12 @@ function Login() {
   const onSubmit = (values, actions) => {
     console.log(values);
     const data = JSON.parse(localStorage.getItem("user"));
-    if(data.email === values.email && data.password === values.password){
+    if (data.email === values.email && data.password === values.password) {
       sessionStorage.setItem("user", JSON.stringify(data));
       navigate("/sidebar");
-      console.log('Form values:', values);
-    } else {  
-      console.log('Invalid credentials');
+      console.log("Form values:", values);
+    } else {
+      console.log("Invalid credentials");
     }
   };
 
@@ -118,7 +118,12 @@ function Login() {
                   Sign in
                 </button>
               </div>
-              <a href="/signup" className="rounded bg-green-500 flex justify-center p-2"> Sign Up</a>
+              <div
+                onClick={() => navigate("/signup")}
+                className="rounded bg-green-500 flex justify-center p-2 cursor-pointer text-white"
+              >
+                Signup
+              </div>
             </Form>
           </div>
         </div>

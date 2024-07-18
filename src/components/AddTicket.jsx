@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { AddTickets } from "../store/slices/TodoTickets.js";
+import { useNavigate } from "react-router-dom";
 
 function AddTicket() {
     // Initialize state variables
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     //
     const [status, setStatus] = useState('');
@@ -16,8 +18,9 @@ function AddTicket() {
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(AddTickets({ email, status, subject, flag, date }));
+        navigate("/sidebar");
         // Print the input values
-        console.log({   email, status, subject, flag, date });
+        // console.log({   email, status, subject, flag, date });
     };
 
     return (
@@ -38,7 +41,7 @@ function AddTicket() {
                             type="text"
                             name="status"
                             placeholder="status"
-                            className="p-2 m-2 border-2 border-gray-200 rounded-md"
+                            className="p-2 m-2 border-2 border-gray-200 rounded-md "
                             value={status}
                             onChange={(e) => setStatus(e.target.value)}
                         />
