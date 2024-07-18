@@ -4,6 +4,7 @@ import ToggleOffRoundedIcon from "@mui/icons-material/ToggleOffRounded";
 import QuickreplySharpIcon from "@mui/icons-material/QuickreplySharp";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import HeaderSearch from "./HeaderSearch";
 
 function Header() {
 
@@ -26,6 +27,7 @@ function Header() {
       style={{ width: "100%" }}
     >
       <h1 className="text-2xl font-semibold">Ticket Dashboard</h1>
+      <div><HeaderSearch label={"ticket search.."}/></div>
       <div className="flex items-center space-x-4">
         {icons.map((IconComponent, index) => (
           <div

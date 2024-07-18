@@ -5,7 +5,7 @@ import { BiArchive } from "react-icons/bi";
 import { BsFlagFill } from "react-icons/bs";
 import { MdDelete } from "react-icons/md";
 import { MdMail } from "react-icons/md";
-import { useSelector,useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import {removeTicket } from "../store/slices/TodoTickets";
 
 function Ticket({ ticket }) {
