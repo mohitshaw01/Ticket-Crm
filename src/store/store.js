@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import TicketSlice from "./slices/TicketSlice";
 import TodoSlice from "./slices/TodoTickets.js";
+import setViews from "./slices/setView.js";
 
 const store = configureStore({
-    reducer : {
-        // ticket : TicketSlice, 
-        todo : TodoSlice,
-    },
-})
+  reducer: {
+    todo: TodoSlice,
+    view: setViews,
+  },
+});
 
 export default store;

@@ -43,10 +43,8 @@ export const removeTicket = createAsyncThunk(
   "removeTicket",
   async (id, { rejectWithValue }) => {
     try {
-      const response = await axios.delete(
-        `https://ticket-api-production-0c8e.up.railway.app/tickets/${id}`
-      );
-      return response.data;
+      console.log(id);
+      return id;
     } catch (error) {
       return rejectWithValue(error.response.data || error.message);
     }
@@ -74,10 +72,10 @@ const todoSlice = createSlice({
         state.status = "loading";
       })
       .addCase(removeTicket.fulfilled, (state, action) => {
-        state.status = "success";
         state.tickets = state.tickets.filter(
           (ticket) => ticket.id !== action.payload.id
         );
+        state.status = "success";
       })
       .addCase(removeTicket.rejected, (state, action) => {
         state.status = "failed";
