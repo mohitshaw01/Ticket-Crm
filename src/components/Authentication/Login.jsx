@@ -10,6 +10,7 @@ function Login() {
     password: "",
   };
 
+  // data verification  is being done on local storage.
   const onSubmit = (values, actions) => {
     console.log(values);
     const data = JSON.parse(localStorage.getItem("user"));
