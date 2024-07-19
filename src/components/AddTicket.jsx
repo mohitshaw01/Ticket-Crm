@@ -24,63 +24,60 @@ function AddTicket() {
     };
 
     return (
-        <>
-            <div className="flex justify-center items-center h-screen">
-                <h1 className="text-4xl">Add Ticket</h1>
-                <div className="flex justify-center items-center h-screen">
-                    <form className="flex flex-row" onSubmit={handleSubmit}>
-                    <input
-                            type="email"
-                            name="email"
-                            placeholder="Email"
-                            className="p-2 m-2 border-2 border-gray-200 rounded-md"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
-                        <input
-                            type="text"
-                            name="status"
-                            placeholder="status"
-                            className="p-2 m-2 border-2 border-gray-200 rounded-md "
-                            value={status}
-                            onChange={(e) => setStatus(e.target.value)}
-                        />
-                        
-                        <input
-                            type="text"
-                            name="subject"
-                            placeholder="Subject"
-                            className="p-2 m-2 border-2 border-gray-200 rounded-md"
-                            value={subject}
-                            onChange={(e) => setSubject(e.target.value)}
-                        />
-                        <input
-                            type="text"
-                            name="flag"
-                            placeholder="Flag"
-                            className="p-2 m-2 border-2 border-gray-200 rounded-md"
-                            value={flag}
-                            onChange={(e) => setFlag(e.target.value)}
-                        />
-                        <input
-                            type="text"
-                            name="date"
-                            placeholder="date"
-                            className="p-2 m-2 border-2 border-gray-200 rounded-md"
-                            value={date}
-                            onChange={(e) => setDate(e.target.value)}
-                        />
-                        <button
-                            type="submit"
-                            className="p-2 m-2 border-2 border-gray-200 rounded-md bg-blue-500 text-white"
-                        >
-                            Add Ticket
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </>
-    );
+        <div className="flex justify-center items-center h-screen bg-slate-800">
+          <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+            <h1 className="text-4xl text-center mb-6">Add Ticket</h1>
+            <form className="flex flex-col" onSubmit={handleSubmit}>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                className="p-3 mb-4 border-2 border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                type="text"
+                name="status"
+                placeholder="Status"
+                className="p-3 mb-4 border-2 border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+                value={status}
+                onChange={(e) => setStatus(e.target.value)}
+              />
+              <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                className="p-3 mb-4 border-2 border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
+              />
+              <input
+                type="text"
+                name="flag"
+                placeholder="Flag"
+                className="p-3 mb-4 border-2 border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+                value={flag}
+                onChange={(e) => setFlag(e.target.value)}
+              />
+              <input
+                type="text"
+                name="date"
+                placeholder="Date"
+                className="p-3 mb-4 border-2 border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+              />
+              <button
+                type="submit"
+                className="p-3 mt-4 border-2 border-gray-300 rounded-md bg-blue-500 text-white hover:bg-blue-600"
+              >
+                Add Ticket
+              </button>
+            </form>
+          </div>
+        </div>
+      );
 }
 
 export default AddTicket;

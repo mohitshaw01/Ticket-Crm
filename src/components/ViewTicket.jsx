@@ -16,7 +16,7 @@ function FetchTicketRedux() {
 
   const filteredTickets = tickets.filter(ticket =>
     ticket.subject.toLowerCase().includes(search.toLowerCase()) &&
-    (ticketView === "All" || ticket.view === ticketView)
+    (ticketView === "All" || ticket.view.toLowerCase().includes(ticketView.toLowerCase()))
   );
 
   return (
