@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-// Define the custom hook
+//custom hook to filter tickets on the basis of tickets, search and ticketView.
 const UseFilteredTickets = (tickets, search, ticketView) => {
     const [filteredTickets, setFilteredTickets] = useState([]);
 

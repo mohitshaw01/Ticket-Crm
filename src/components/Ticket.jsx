@@ -10,7 +10,7 @@ import {removeTicket } from "../store/slices/TodoTickets";
 
 function Ticket({ ticket }) {
   const dispatch = useDispatch();
-  
+  // it is dipatching the id to the remove ticket in redux store.
   const handleDelete = () => {
     console.log(ticket.id); 
     dispatch(removeTicket(ticket.id));
