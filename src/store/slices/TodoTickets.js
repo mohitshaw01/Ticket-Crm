@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 import axios from "axios";
 
-    const staticTickets = [
+const staticTickets = [
       {
           "id": 1,
           "email": "user1@example.com",
@@ -203,7 +203,7 @@ import axios from "axios";
         "date": "Aug 15",
         "view": "All Complete"
     }
-  ]
+]
 
 const initialState = {
   tickets: [],

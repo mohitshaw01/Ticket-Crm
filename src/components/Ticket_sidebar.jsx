@@ -9,6 +9,7 @@ function Ticket_sidebar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const views = [
+    "All",
     "Unassigned",
     "All pending",
     "All Complete",

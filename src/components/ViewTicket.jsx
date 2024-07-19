@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchTickets } from '../store/slices/TodoTickets.js';
 import Ticket from './Ticket.jsx';
+import UseFilteredTickets from '../Hooks/UseFilteredTickets.jsx';
 
 function FetchTicketRedux() {
   const dispatch = useDispatch();
@@ -14,10 +15,13 @@ function FetchTicketRedux() {
     if (tickets.length === 0) dispatch(fetchTickets());
   }, [dispatch, tickets.length]);
 
-  const filteredTickets = tickets.filter(ticket =>
-    ticket.subject.toLowerCase().includes(search.toLowerCase()) &&
-    (ticketView === "All" || ticket.view.toLowerCase().includes(ticketView.toLowerCase()))
-  );
+  // this is now on Hooks folder and is made a custome hook that fileter tiket based on search and ticketView
+  // const filteredTickets = tickets.filter(ticket =>
+  //   ticket.subject.toLowerCase().includes(search.toLowerCase()) &&
+  //   (ticketView === "All" || ticket.view.toLowerCase().includes(ticketView.toLowerCase()))
+  // );
+
+  const filteredTickets = UseFilteredTickets(tickets, search, ticketView);
 
   return (
     <div className="h-[90vh] w-full overflow-scroll overflow-x-hidden">
